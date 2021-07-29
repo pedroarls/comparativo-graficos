@@ -6,6 +6,8 @@ import { RechartsAreaChart } from "./charts/RechartsAreaChart";
 import { NivoAreaChart } from "./charts/NivoAreaChart";
 import { ReactVisArea } from "./charts/ReactVisArea";
 import { ViserArea } from "./charts/ViserArea";
+import { ChartJSAreaChart} from "./charts/ChartsJsAreaChart";
+import { VisXAreaChart } from "./charts/VisXAreaChart";
 
 function App() {
   return (
@@ -31,6 +33,12 @@ function App() {
           <br />
           <br />
           <ViserArea />
+          <br />
+          <br />
+          <ChartJSAreaChart/>
+          <br />
+          <br />
+          <VisXAreaChart width={500} height={300} />
         </div>
       </div>
     </div>

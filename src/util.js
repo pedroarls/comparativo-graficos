@@ -38,12 +38,56 @@ export const addOneSec = date => {
 export const nivoData = () => {
   return [
     {
-      id: "catagory-1",
+      id: "category-1",
       data: simpleData().map(({ x, y }) => ({ x: new Date(x), y }))
     },
     {
-      id: "catagory-2",
+      id: "category-2",
       data: simpleData().map(({ x, y }) => ({ x: new Date(x), y }))
     }
   ];
 };
+
+export const chartjsData = () => {
+  let dataSet1 =  simpleData().map(({ x, y }) => ({ x: x, y }));
+  let dataSet2 = simpleData().map(({ x, y }) => ({ x: x, y }));
+  const labels = [...dataSet1.map(({ x }) => ( x ))];
+
+  dataSet1 = dataSet1.map(({ y }) => ( y ));
+  dataSet2 = dataSet2.map(({ y }) => ( y ))
+
+  return {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Categoria 1',
+        data: dataSet1,
+        fill: true,
+        backgroundColor: "rgba(75,192,192,0.2)",
+        borderColor: "rgba(75,192,192,1)"
+      },
+      {
+        label: 'Categoria 2',
+        data: dataSet2,
+        fill: true,
+        borderColor: "#742774"
+      },
+    ]
+  }
+}
+
+export const visXData = () => {
+  let data = [];
+
+  for (let i = 0; i < 11; ++i) {
+    data.push({
+      date: moment()
+        .subtract(i, "seconds")
+        .format(),
+      "New York": random(100),
+      "San Francisco": random(100)
+    });
+  }
+
+  return data;
+}
